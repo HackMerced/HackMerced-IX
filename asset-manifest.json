@@ -1,10 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.52e86b79.css",
-    "main.js": "/static/js/main.65178419.js",
+    "main.css": "/static/css/main.73e1e719.css",
+    "main.js": "/static/js/main.1cf80bb3.js",
     "static/js/787.b6eda124.chunk.js": "/static/js/787.b6eda124.chunk.js",
     "static/media/landing.mp4": "/static/media/landing.e3a34599cb3f4932fa9f.mp4",
+    "static/media/jet.jpeg": "/static/media/jet.e8990f1909572d8d98f3.jpeg",
+    "static/media/david.JPEG": "/static/media/david.6dbc7c99b7d51b68af4d.JPEG",
+    "static/media/alisson.jpeg": "/static/media/alisson.326bc4443c879163b6e4.jpeg",
     "static/media/sponsor_logos.png": "/static/media/sponsor_logos.f5604e72a297e51611b5.png",
+    "static/media/porfi.jpeg": "/static/media/porfi.8e6a0f93ea682131ef24.jpeg",
     "static/media/ag.svg": "/static/media/ag.63b60df20946c9323fc476570af66de5.svg",
     "static/media/instagram 1.svg": "/static/media/instagram 1.1f92701723c42664ee4b4b8190ff4acc.svg",
     "static/media/discord 1.svg": "/static/media/discord 1.c55fef93e620ff2680587b66c2b262e8.svg",
@@ -14,12 +18,12 @@
     "index.html": "/index.html",
     "static/media/Vector 1.svg": "/static/media/Vector 1.dfe7bd48083770efdefca5ab71127068.svg",
     "static/media/arrow_right.svg": "/static/media/arrow_right.797afb4bb4bfd0b5293bba1cdb904dd4.svg",
-    "main.52e86b79.css.map": "/static/css/main.52e86b79.css.map",
-    "main.65178419.js.map": "/static/js/main.65178419.js.map",
+    "main.73e1e719.css.map": "/static/css/main.73e1e719.css.map",
+    "main.1cf80bb3.js.map": "/static/js/main.1cf80bb3.js.map",
     "787.b6eda124.chunk.js.map": "/static/js/787.b6eda124.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.52e86b79.css",
-    "static/js/main.65178419.js"
+    "static/css/main.73e1e719.css",
+    "static/js/main.1cf80bb3.js"
   ]
 }
