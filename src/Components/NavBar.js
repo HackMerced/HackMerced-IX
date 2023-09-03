@@ -5,8 +5,8 @@ function NavBar() {
           <li><a href="#tracks"><button className="button">tracks</button></a></li>
           <li><a href="#faq"><button className="button">faq</button></a></li>
           <li><a href="#sponsors"><button className="button">sponsors</button></a></li>
-          <li><a href="https://forms.gle/mgBKuK3G9L6FsxsJ8"><button className="button">mentor</button></a></li>
-          <li><a href="https://forms.gle/pmMz4zeeEsMD3Pc1A"><button className="registerButton">register</button></a></li>
+          <li><a href="https://docs.google.com/forms/d/1m3gyvbUCWNQHYHcNA8qRXJdkmmXY19ApVzHxyjZCQSM/edit"><button className="button">mentor</button></a></li>
+          <li><a href="https://docs.google.com/forms/d/1_A3jLqUO3d5hsv9MtMF358K0C2nntOpq_WYin2H1aKw/edit"><button className="registerButton">register</button></a></li>
         </ul>
             
       </div>
