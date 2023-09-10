@@ -1,7 +1,20 @@
+import React, { useState } from 'react';
+
 function NavBar() {
+  const [isNavBarActive, setIsNavBarActive] = useState(false);
+
+  const toggleNavBar = () => {
+    setIsNavBarActive(!isNavBarActive);
+  };
+
     return (
       <div className="NavBar">
-        <ul className="nav-items">
+      <a href="#" className={`navbar-toggle ${isNavBarActive ? 'active' : ''}`} onClick={toggleNavBar}>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <ul className={`nav-items ${isNavBarActive ? 'active' : ''}`}>
           <li><a href="#team"><button className="button" id="team-button">team</button></a></li>
           <li><a href="#tracks"><button className="button" id="tracks-button">tracks</button></a></li>
           <li><a href="#faq"><button className="button" id="faq-button">faq</button></a></li>
