@@ -560,10 +560,10 @@ a {
   }
 
   .nav-items.active {
-    position: static;
     top: 3.7rem;
     right: 0;
-    width: 100%;
+    width: 82%;
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
