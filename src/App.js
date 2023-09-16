@@ -1,4 +1,4 @@
-
+import '../node_modules/minireset.css/minireset.css'
 import './App.css';
 import Tracks from './Components/Tracks.js';
 import FAQ from './Components/FAQ.js'
@@ -11,9 +11,7 @@ import Team from './Components/Team.js';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <NavBar/>
-      </header>
+      <NavBar/>
       <MainPage/>
       <Team/>
       <Tracks/>
