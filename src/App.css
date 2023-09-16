@@ -202,7 +202,6 @@ a {
 }
 .nav-items {
   width: 100%;
-  border: 1px solid black;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -555,19 +554,26 @@ a {
     display: none;
   }
 
+  .NavBar {
+    height: 4.2rem;
+  }
+
   .NavBar.active {
-    height: 12.5rem;
+    height: 13rem;
   }
 
   .nav-items.active {
-    top: 3.7rem;
-    right: 0;
-    width: 82%;
-    border: 1px solid black;
+    max-width: 100%;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-left: 2.5rem;
+  }
+
+  .button.active {
+    border: 1px solid white;
   }
 
   /* .nav-items {
