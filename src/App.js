@@ -15,6 +15,7 @@ function App() {
         <NavBar/>
       </header>
       <MainPage/>
+      <Team/>
       <Tracks/>
       <FAQ/>
       <Sponsors/>
