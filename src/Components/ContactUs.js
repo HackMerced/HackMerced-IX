@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Container, TextField, Button, Box, Typography, Grid } from '@mui/material';
+import { Container, TextField, Button, Box, Typography, Grid, Alert, Snackbar } from '@mui/material';
 import UCMmap from '../Assets/ucmmap.svg';
-import { collection, addDoc, setDoc, doc } from "firebase/firestore"; 
+import {setDoc, doc } from "firebase/firestore"; 
 import db from '../firebase.js';
+
 
 const ContactPage = () => {
   const emailRegex = /\S+@\S+\.\S+/;
@@ -13,6 +14,8 @@ const ContactPage = () => {
     email: '',
     message: '',
   });
+  const [alert, setAlert] = useState({ open: false, message: '', severity: 'success' });
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -59,6 +62,7 @@ const ContactPage = () => {
       });
 
       console.log("Document written successfully!");
+      setAlert({ open: true, message: 'Your message has been successfully submitted!', severity: 'success' });
 
       setFormData({
         fullName: '',
@@ -68,6 +72,7 @@ const ContactPage = () => {
 
     } catch (error) {
       console.error("Error adding document: ", error);
+      setAlert({ open: true, message: 'Error submitting your message. Please try again.', severity: 'error' });
 
     }
   };
@@ -153,7 +158,11 @@ const ContactPage = () => {
           </Container>
       </Grid>
     </Grid>
-    {/* </Box> */}
+    <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'center' }} open={alert.open} autoHideDuration={6000} onClose={() => setAlert({ ...alert, open: false })}>
+      <Alert onClose={() => setAlert({ ...alert, open: false })} severity={alert.severity} sx={{ width: '100%' }}>
+        {alert.message}
+      </Alert>
+    </Snackbar>
     </>
   );
 };
