@@ -1,69 +1,43 @@
-/**
- * Import function triggers from their respective submodules:
- *
- * const {onCall} = require("firebase-functions/v2/https");
- * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
- *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
- */
-
-// const {onRequest} = require("firebase-functions/v2/https");
-
-// Create and deploy your first functions
-// https://firebase.google.com/docs/functions/get-started
-
-// exports.helloWorld = onRequest((request, response) => {
-//   logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
-
+/* eslint-disable max-len */
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
+const sgMail = require("@sendgrid/mail");
+const {info, debug} = require("firebase-functions/logger");
 admin.initializeApp();
-const nodemailer = require("nodemailer");
-const {logger} = require("firebase-functions/logger");
 
-// const appEmail = process.env.REACT_APP_EMAIL;
-// const appPassword = process.env.REACT_APP_PASSWORD;
-// const transporter = nodemailer.createTransport({
-//     service: "gmail",
-//     auth: {
-//       user: appEmail,
-//       pass: appPassword,
-//     },
-//   });
+const sendGridAPI = "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";
+sgMail.setApiKey(sendGridAPI);
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "hackmercedquerysender@gmail.com",
-    pass: "HACKMERCED_query_sender!123",
-  },
-});
 
-exports.sendEmailOnInquiry = functions.firestore
-    .document("contacts/{inquiryId}")
-    .onCreate((snapshot, context) => {
-      const inquiryData = snapshot.data();
+exports.sendInquiryEmail = functions.firestore
+    .document("contacts/{docId}")
+    .onCreate((snap, context) => {
+      const newValue = snap.data();
+      const email = newValue.email;
+      const fullName = newValue.fullName;
+      const message = newValue.message;
 
-      const mailOptions = {
-        from: "hackmercedquerysender@gmail.com",
+      const msg = {
         to: "porfirio@hackmerced.com",
-        subject: "New Contact Us Inquiry",
-        text: `
-                Name: ${inquiryData.fullName}
-                Email: ${inquiryData.email}
-                Message: ${inquiryData.message}
-            `,
+        from: "hackmercedquerysender@gmail.com",
+        subject: "New Contact Inquiry from HackMerced Website",
+        text: `You have a new inquiry from ${fullName} (${email}): ${message}`,
+        html: `<strong>You have a new inquiry from ${fullName} (${email}):</strong> ${message}`,
       };
 
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          console.error("Failed to send email", error);
-          logger.error("Failed to send email", error);
-          return;
-        }
-        console.log("Email sent: " + info.response);
-        logger.log(`Email sent: ${info.response}`);
-      });
+      return sgMail
+          .send(msg)
+          .then(() => {
+            console.log("Email sent");
+            info("Email sent", {structuredData: true});
+          })
+          .catch((error) => {
+            console.error("Error sending email", error);
+            if (error.response) {
+              console.error(error.response.body);
+            }
+            debug(error, {structuredData: true});
+          });
     });
+
+
