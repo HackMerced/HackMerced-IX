@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.bc96d28d.css",
-    "main.js": "/static/js/main.ea17f282.js",
-    "static/js/787.b6eda124.chunk.js": "/static/js/787.b6eda124.chunk.js",
+    "main.css": "/static/css/main.11ab7412.css",
+    "main.js": "/static/js/main.4d11df83.js",
+    "static/js/787.d10bf79a.chunk.js": "/static/js/787.d10bf79a.chunk.js",
     "static/media/team-photo.JPG": "/static/media/team-photo.b1c6204cc0ee18339d62.JPG",
     "static/media/alisson.JPG": "/static/media/alisson.e9bf30c9ec74bc363ecd.JPG",
     "static/media/porfi.JPG": "/static/media/porfi.93f11f278836c1783301.JPG",
@@ -24,12 +24,12 @@
     "index.html": "/index.html",
     "static/media/Vector 1.svg": "/static/media/Vector 1.585114fdd7b0cd96479f326eeaccf89f.svg",
     "static/media/arrow_right.svg": "/static/media/arrow_right.797afb4bb4bfd0b5293bba1cdb904dd4.svg",
-    "main.bc96d28d.css.map": "/static/css/main.bc96d28d.css.map",
-    "main.ea17f282.js.map": "/static/js/main.ea17f282.js.map",
-    "787.b6eda124.chunk.js.map": "/static/js/787.b6eda124.chunk.js.map"
+    "main.11ab7412.css.map": "/static/css/main.11ab7412.css.map",
+    "main.4d11df83.js.map": "/static/js/main.4d11df83.js.map",
+    "787.d10bf79a.chunk.js.map": "/static/js/787.d10bf79a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc96d28d.css",
-    "static/js/main.ea17f282.js"
+    "static/css/main.11ab7412.css",
+    "static/js/main.4d11df83.js"
   ]
 }
